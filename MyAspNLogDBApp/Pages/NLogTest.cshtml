@@ -1,0 +1,59 @@
+﻿@page
+@model MyAspNLogDBApp.Pages.NLogTestModel
+@{
+    ViewData["Title"] = "NLogTest Page";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Use this page to test some NLog entries.</p>
+<p>
+    <div style="padding-top: 10px;">
+        <button>
+            <a asp-page-handler="Button_6" title="Create a user handled Stack Overflow" class="nav-link text-dark" asp>
+                #6
+            </a>
+        </button>
+    </div>
+    <div style="padding-top: 10px;">
+        <button>
+            <a asp-page-handler="Button_5" title="Create a Stack Overflow, caution this is a real stack overflow terminating the application (see note in source code)" class="nav-link text-dark" asp>
+                #5
+            </a>
+        </button>
+    </div>
+    <div style="padding-top: 10px;">
+        <button>
+            <a asp-page-handler="Button_4" title="Divide by 0" class="nav-link text-dark" asp>
+                #4
+            </a>
+        </button>
+    </div>
+    <div style="padding-top: 10px;">
+        <button>
+            <a asp-page-handler="Button_3" title="Create an Exception" class="nav-link text-dark" asp>
+                #3
+            </a>
+        </button>
+    </div>
+    <div style="padding-top: 10px;">
+        <button>
+            <a asp-page-handler="Button_2" title="Print a Error Message in the Log-File" class="nav-link text-dark" asp>
+                #2
+            </a>
+        </button>
+    </div>
+    <div style="padding-top: 10px;">
+        <button>
+            <a asp-page-handler="Button_1" title="Just print a Info Message in the Log-File" class="nav-link text-dark">
+                #1
+            </a>
+        </button>
+    </div>
+</p>
+
+<p>Enter a Message Text and press Submit to write a message with NLog in the DB:</p>
+<form method="post">
+    <input type="text" name="MessageText">
+    <input type="submit">
+</form>
+
