@@ -1,9 +1,5 @@
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using System.ComponentModel;
 using System.Diagnostics;
-using System.Text.RegularExpressions;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace MyAspNLogDBApp.Pages
 {
@@ -142,7 +138,8 @@ namespace MyAspNLogDBApp.Pages
         public void OnGetButton_1()
         {
             string message = "You pressed Button #1";
-            _logger.Info(message);
+            string user = "User XYZ";
+            _logger.WithProperty("AppUser", user).Info(message);
 
             Debug.WriteLine($"Button_1");
         }
